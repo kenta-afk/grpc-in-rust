@@ -3,6 +3,7 @@ package helloworld;
 
 service Greeter {
     rpc SayHello (HelloRequest) returns (HelloResponse);
+    rpc SayGoodbye (GoodbyeRequest) returns (GoodbyeResponse);
 }
 
 message HelloRequest {
@@ -11,4 +12,14 @@ message HelloRequest {
 
 message HelloResponse {
     string message = 1;
+}
+
+message GoodbyeRequest {
+    string name = 1;
+    bool reminder = 2;
+}
+
+message GoodbyeResponse {
+    string message = 1;
+    string meeting = 2;
 }
